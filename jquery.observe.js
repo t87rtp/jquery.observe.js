@@ -37,10 +37,11 @@
         }
         $this.data("observe_prev", func());
         $this.data("observe_timer", window.setInterval(function() {
-          var current_val;
+          var current_val, previous_val;
           current_val = func();
-          if (current_val !== $this.data("observe_prev")) {
-            $this.trigger("realtimechange");
+          previous_val = $this.data("observe_prev");
+          if (current_val !== previous_val) {
+            $this.trigger("realtimechange", [previous_val, current_val]);
             return $this.data("observe_prev", current_val);
           }
         }, 10));
