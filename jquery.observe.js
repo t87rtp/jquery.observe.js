@@ -22,7 +22,7 @@
         if ($this.data("observe_timer") != null) {
           window.clearInterval($this.data("observe_timer"));
         }
-        if ($this.is("input[type=text], textarea, select")) {
+        if ($this.is("input[type!=radio][type!=checkbox], textarea, select")) {
           func = function() {
             return $this.val();
           };
