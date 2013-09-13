@@ -53,3 +53,11 @@ $(selector).on("realtimechange", function(event, previous, current){
 })
 ```
 ハンドラの受け取る引数は3つで、第二引数は変更前の値、第三引数は変更後（現在）の値です。
+
+##Optional Usage
+
+フォームの要素、特にinput[type=text]とtextareaに特化した使用法となるかもしれませんが、「observe_on_focus」をクラスに持つ要素は、フォーカス時に監視を開始しフォーカスが外れた時に監視を終了します。
+
+```html
+<input type="text" name="name" class="observe_on_focus" value="" />
+```
